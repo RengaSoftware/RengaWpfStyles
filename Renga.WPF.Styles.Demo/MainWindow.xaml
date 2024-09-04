@@ -1,0 +1,76 @@
+﻿<Window x:Class="Renga.WPF.Styles.Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Renga.WPF.Styles.Demo"
+        xmlns:rws="clr-namespace:Renga.WPF.Styles;assembly=Renga.WPF.Styles"
+        mc:Ignorable="d"
+        Title="Настройки" Width="516" Height="600"
+        ResizeMode="NoResize"
+        Style="{StaticResource Renga.WPF.Style.DialogWindow}">
+  <DockPanel>
+    <StackPanel DockPanel.Dock="Bottom" Margin="0,13,0,0"
+                rws:MarginSetter.Margin="0,0,9,0"
+                Orientation="Horizontal" FlowDirection="RightToLeft">
+      <Button Content="Отмена"/>
+      <Button Content="ОК"/>
+    </StackPanel>
+    <DockPanel>
+      <ListBox DockPanel.Dock="Left" Width="170">
+        <ListBox.Items>
+          <ListBoxItem Content="Общие"/>
+          <ListBoxItem Content="Навигация"/>
+          <ListBoxItem Content="Расширения"/>
+        </ListBox.Items>
+      </ListBox>
+      <StackPanel Margin="13,0,0,0" rws:MarginSetter.Margin="0,0,0,13">
+        <GroupBox Header="Режимы графики">
+          <StackPanel rws:MarginSetter.Margin="0,0,0,9">
+            <CheckBox Content="Использовать аппаратное ускорение графики"/>
+            <!--CheckBox Content="Включить освещение"/>
+            <CheckBox Content="Показывать тени"/>
+            <CheckBox Content="Сглаживать неровности линий"/-->
+          </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Параметры интерфейса пользователя">
+          <StackPanel rws:MarginSetter.Margin="0,0,0,9">
+            <CheckBox Content="Отображать команду &quot;Виртуальная реальность&quot;" IsChecked="True" IsEnabled="False"/>
+            <CheckBox Content="Отображать эскизы вместо значков" IsThreeState="True"/>
+          </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Размер текста и других элементов">
+          <StackPanel rws:MarginSetter.Margin="0,0,0,9">
+            <ComboBox SelectedIndex="0" IsEnabled="False">
+              <ComboBox.Items>
+                <ComboBoxItem Content="Авто (100%)"/>
+                <ComboBoxItem Content="100%"/>
+                <ComboBoxItem Content="200%"/>
+              </ComboBox.Items>
+            </ComboBox>
+            <ComboBox SelectedIndex="0">
+              <ComboBox.Items>
+                <ComboBoxItem Content="Авто (100%)"/>
+                <ComboBoxItem Content="100%"/>
+                <ComboBoxItem Content="200%"/>
+              </ComboBox.Items>
+            </ComboBox>
+          </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Режим навигации">
+          <StackPanel rws:MarginSetter.Margin="0,0,0,9">
+            <RadioButton Content="Управление объектом" IsChecked="True"/>
+            <RadioButton Content="Управление камерой"/>
+            <!--RadioButton Content="Управление мыслью" IsEnabled="False"/-->
+          </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Шрифт по умолчанию">
+          <StackPanel rws:MarginSetter.Margin="0,0,0,9">
+            <TextBox Text="2,50" />
+            <TextBox Text="2,50" IsEnabled="False"/>
+          </StackPanel>
+        </GroupBox>
+      </StackPanel>
+    </DockPanel>
+  </DockPanel>
+</Window>

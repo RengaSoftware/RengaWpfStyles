@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="Renga.xaml"/>
+  </ResourceDictionary.MergedDictionaries>
+
+  <Style TargetType="Window"      BasedOn="{StaticResource Renga.WPF.Style.Window}"/>
+  <Style TargetType="ListBox"     BasedOn="{StaticResource Renga.WPF.Style.ListBox}"/>
+  <Style TargetType="Button"      BasedOn="{StaticResource Renga.WPF.Style.Button}"/>
+  <Style TargetType="GroupBox"    BasedOn="{StaticResource Renga.WPF.Style.GroupBox}"/>
+  <Style TargetType="CheckBox"    BasedOn="{StaticResource Renga.WPF.Style.CheckBox}"/>
+  <Style TargetType="RadioButton" BasedOn="{StaticResource Renga.WPF.Style.RadioButton}"/>
+  <Style TargetType="TextBox"     BasedOn="{StaticResource Renga.WPF.Style.TextBox}"/>
+  <Style TargetType="ComboBox"    BasedOn="{StaticResource Renga.WPF.Style.ComboBox}"/>
+</ResourceDictionary>

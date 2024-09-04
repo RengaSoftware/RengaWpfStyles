@@ -1,0 +1,82 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="Details.xaml"/>
+  </ResourceDictionary.MergedDictionaries>
+
+  <Style x:Key="Renga.WPF.Style.RadioButton" TargetType="RadioButton">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type RadioButton}">
+          <BulletDecorator Background="Transparent">
+            <BulletDecorator.Bullet>
+              <Grid Width="13" Height="13">
+                <Ellipse x:Name="Border"
+                         StrokeThickness="1"
+                         Stroke="{StaticResource Renga.WPF.Styles.Brush.ControlBorder}"
+                         Fill="{StaticResource Renga.WPF.Styles.Brush.ControlBackground}"/>
+                <Ellipse x:Name="CheckMark"
+                         Margin="3"
+                         Visibility="Collapsed"
+                         SnapsToDevicePixels="True"
+                         Fill="{StaticResource Renga.WPF.Styles.Brush.Glyph}"/>
+              </Grid>
+            </BulletDecorator.Bullet>
+
+            <ContentPresenter x:Name="ContentPresenter"
+                              Margin="4,0,0,0"
+                              VerticalAlignment="Center"
+                              HorizontalAlignment="Left"
+                              RecognizesAccessKey="True" />
+            
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal" />
+                <VisualState x:Name="MouseOver">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                   Storyboard.TargetProperty="Stroke">
+                      <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource Renga.WPF.Styles.Brush.HoveredRadioBorder}" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Pressed">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                   Storyboard.TargetProperty="Stroke">
+                      <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource Renga.WPF.Styles.Brush.PressedRadioBorder}" />
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                   Storyboard.TargetProperty="Fill">
+                      <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource Renga.WPF.Styles.Brush.PressedControlBackground}" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Disabled">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter"
+                                                   Storyboard.TargetProperty="(TextBlock.Foreground)">
+                      <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource Renga.WPF.Styles.Brush.DisabledForeground}"/>
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+              </VisualStateGroup>
+              <VisualStateGroup x:Name="CheckStates">
+                <VisualState x:Name="Unchecked" />
+                <VisualState x:Name="Checked">
+                  <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                   Storyboard.TargetName="CheckMark">
+                      <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                    </ObjectAnimationUsingKeyFrames>
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Indeterminate" />
+              </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+          </BulletDecorator>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

@@ -1,0 +1,15 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Renga.WPF.Styles">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="Control/Window.xaml"/>
+    <ResourceDictionary Source="Control/ListBox.xaml"/>
+    <ResourceDictionary Source="Control/Button.xaml"/>
+    <ResourceDictionary Source="Control/GroupBox.xaml"/>
+    <ResourceDictionary Source="Control/CheckBox.xaml"/>
+    <ResourceDictionary Source="Control/RadioButton.xaml"/>
+    <ResourceDictionary Source="Control/TextBox.xaml"/>
+    <ResourceDictionary Source="Control/ComboBox.xaml"/>
+  </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
