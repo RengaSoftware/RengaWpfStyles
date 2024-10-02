@@ -57,7 +57,7 @@
               </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
 
-            <ScrollViewer Margin="0" x:Name="PART_ContentHost" VerticalAlignment="Center" />
+            <ScrollViewer Margin="3" x:Name="PART_ContentHost" VerticalAlignment="Top" />
           </Border>
 
           <ControlTemplate.Triggers>
